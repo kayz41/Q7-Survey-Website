@@ -1,0 +1,328 @@
+/* =========================================================
+   NITA-U NATIONAL IT SKILLS ASSESSMENT 2026
+   External stylesheet for index.html
+   Brand colours: Dark Blue #002147 and Gold #D4AF37
+   ========================================================= */
+
+/* Reset default browser spacing and make element sizing predictable. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-blue: #002147;
+    --gold: #D4AF37;
+    --white: #FFFFFF;
+    --light-grey: #F3F5F8;
+    --text: #253247;
+    --border: #CBD3DD;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--light-grey);
+}
+
+/* HEADER */
+.site-header {
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
+
+.header-inner {
+    max-width: 1200px;
+    min-height: 110px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+}
+
+.header-inner img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.header-inner h1 {
+    font-size: clamp(1.2rem, 3vw, 1.9rem);
+    line-height: 1.25;
+    text-align: center;
+}
+
+/* FULL-WIDTH SURVEY BANNER */
+.survey-banner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background-color: var(--dark-blue);
+}
+
+.survey-banner > img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.banner-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    text-align: center;
+    background: rgba(0, 33, 71, 0.58);
+}
+
+.banner-overlay h2 {
+    max-width: 900px;
+    color: var(--white);
+    font-size: clamp(1.8rem, 4.5vw, 3rem);
+    line-height: 1.2;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+}
+
+/* THREE-STEP PROGRESS INDICATOR */
+.progress-section {
+    width: 100%;
+    padding: 25px 20px;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border);
+}
+
+.progress-steps {
+    max-width: 950px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.progress-step {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #687486;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.progress-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 19px;
+    left: calc(50% + 25px);
+    width: calc(100% - 50px);
+    height: 3px;
+    background-color: #D8DEE6;
+}
+
+.step-number {
+    position: relative;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #B9C3CF;
+    border-radius: 50%;
+    background-color: var(--white);
+    color: #687486;
+    font-weight: 700;
+}
+
+.progress-step.current {
+    color: var(--dark-blue);
+    font-weight: 700;
+}
+
+.progress-step.current .step-number {
+    color: var(--dark-blue);
+    border-color: var(--gold);
+    background-color: var(--gold);
+}
+
+.progress-step.current .step-label {
+    color: var(--dark-blue);
+}
+
+/* RESPONDENT DETAILS FORM */
+.form-section {
+    max-width: 1000px;
+    margin: 35px auto 55px;
+    padding: 0 22px;
+}
+
+.section-intro {
+    margin-bottom: 22px;
+}
+
+.eyebrow {
+    color: #8A6B12;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.section-intro h2 {
+    color: var(--dark-blue);
+    font-size: 1.8rem;
+    margin: 4px 0 6px;
+}
+
+.survey-form fieldset {
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-top: 5px solid var(--gold);
+    border-radius: 7px;
+    background-color: var(--white);
+    box-shadow: 0 5px 18px rgba(0, 33, 71, 0.06);
+}
+
+.survey-form legend {
+    padding: 0 10px;
+    color: var(--dark-blue);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-group > label,
+.group-label {
+    color: var(--dark-blue);
+    font-weight: 700;
+}
+
+.required {
+    color: #B3261E;
+}
+
+.form-group input:not([type="radio"]),
+.form-group select {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background-color: var(--white);
+    color: var(--text);
+    font: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: 2px solid var(--gold);
+    outline-offset: 1px;
+    border-color: var(--dark-blue);
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.radio-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 25px;
+    padding: 8px 0;
+}
+
+.radio-options label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.radio-options input[type="radio"] {
+    accent-color: var(--dark-blue);
+    width: 16px;
+    height: 16px;
+}
+
+/* FOOTER */
+.site-footer {
+    padding: 24px 20px;
+    color: var(--white);
+    background-color: var(--dark-blue);
+    text-align: center;
+    font-size: 0.92rem;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 650px) {
+    .header-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .survey-banner,
+    .survey-banner > img {
+        height: 260px;
+    }
+
+    .progress-section {
+        padding: 20px 8px;
+    }
+
+    .progress-step {
+        font-size: 0.78rem;
+    }
+
+    .progress-step:not(:last-child)::after {
+        left: calc(50% + 20px);
+        width: calc(100% - 40px);
+    }
+
+    .step-number {
+        width: 34px;
+        height: 34px;
+    }
+
+    .progress-step:not(:last-child)::after {
+        top: 16px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .survey-form fieldset {
+        padding: 20px 16px;
+    }
+
+    .radio-options {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
